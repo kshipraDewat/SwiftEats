@@ -1,10 +1,13 @@
+import { Route, Routes } from "react-router-dom"
+import Navbar from "./components/Navbar"
+import Home from "./pages/Home"
 
 
 function App() {
 
   return (
-   <div className="bg-orange-500 text-white text-2xl p-5">
-         Swift Eats
+   <div className="">
+      <Navbar/>
    </div>
   )
 }
