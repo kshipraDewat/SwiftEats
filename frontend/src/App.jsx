@@ -3,8 +3,8 @@
 function App() {
 
   return (
-   <div>
-    
+   <div className="bg-orange-500 text-white text-2xl p-5">
+         Swift Eats
    </div>
   )
 }
