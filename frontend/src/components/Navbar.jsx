@@ -12,7 +12,7 @@ const Navbar = () => {
   return (
     <div className='p-2 flex justify-between items-center border border-e shadow'>
        <img src={assets.logo} alt="" className='h-8' />
-       <ul className=" flex gap-5 items-center">
+       <ul className=" hidden md:flex flex gap-5 items-center ">
        <Link to={"/"}  onClick={() => setMenu("home")} className={`${menu === "home" ? " underline " : ""}`} > Home</Link>
        <a href='#explore-menu' onClick={() => setMenu("menu")} className={`${menu === "menu" ? "underline" : ""}`}>menu</a>
        <a href='#app-download' onClick={() => setMenu("mob-app")} className={`${menu === "mob-app" ? "underline" : ""}`}>mobile app</a>
