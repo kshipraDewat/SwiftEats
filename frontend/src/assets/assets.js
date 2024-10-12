@@ -1,4 +1,5 @@
 import logo from './logo.png'
+import logox from './logox.png'
 import headerimg from './header_img.png'
 import menu_1 from './menu_1.png'
 import menu_2 from './menu_2.png'
@@ -8,15 +9,22 @@ import menu_5 from './menu_5.png'
 import menu_6 from './menu_6.png'
 import menu_7 from './menu_7.png'
 import menu_8 from './menu_8.png'
+import linkedin_icon from './linkedin_icon.png'
+import facebook_icon from './facebook_icon.png'
+import twitter_icon from './twitter_icon.png'
 
 import app_store from './app_store.png'
 import play_store from './play_store.png'
 
 export const assets = {
     logo,
+    logox,
     headerimg,
     app_store,
     play_store,
+    linkedin_icon,
+    facebook_icon,
+    twitter_icon,
 
 }
 
