@@ -6,7 +6,7 @@ import { menu_list } from '../assets/assets'
 const ExploreMenu = ({category,setCategory}) => {
   
   return (
-    <div className='flex flex-col px-10 md:px-20 items-center gap-8' id='explore-menu'>
+    <div className=' mt-10 flex flex-col px-10 md:px-20 items-center gap-5' id='explore-menu'>
       <h1 className='text-2xl font-bold'>Explore our menu</h1>
       <p className='explore-menu-text'>Choose from a diverse menu featuring a delectable array of dishes. Our mission is to satisfy your cravings and elevate your dining experience, one delicious meal at a time.</p>
       <div className='grid grid-cols-4 lg:grid-cols-8 gap-10 items-center justify-center '>
