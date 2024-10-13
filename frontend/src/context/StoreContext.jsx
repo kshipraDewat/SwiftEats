@@ -1,15 +1,25 @@
-import { createContext } from "react"
-import { menu_list } from "../assets/assets.js"
-export const StoreContext = createContext(null)
-const StoreContextProvider =(props)=>{
+import { createContext, useEffect, useState } from "react";
+export const StoreContext = createContext(null);
 
-    const contextValue ={
-        menu_list,
-    }
+const StoreContextProvider = (props) => {
 
-    return(
-        <StoreContextProvider.Provider value={contextValue}> 
+    const url = "http://localhost:4000"
+    const [token, setToken] = useState("")
+   
+
+    const contextValue = {
+        url,
+        token,
+        setToken,
+
+    };
+
+    return (
+        <StoreContext.Provider value={contextValue}>
             {props.children}
-        </StoreContextProvider.Provider>
+        </StoreContext.Provider>
     )
+
 }
+
+export default StoreContextProvider;

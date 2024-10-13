@@ -1,8 +1,11 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { assets } from '../assets/assets'
 import { RxCross2 } from "react-icons/rx";
+import axios from 'axios'
+import { StoreContext } from '../context/StoreContext';
 
 const LoginPopup = ({setShowLogin}) => {
+    const { setToken, url } = useContext(StoreContext)
     const [currState, setCurrState] = useState("Sign Up");
 
     const [data, setData] = useState({
@@ -15,20 +18,40 @@ const LoginPopup = ({setShowLogin}) => {
         const value = event.target.value
         setData(data => ({ ...data, [name]: value }))
     }
+
+    const onLogin = async (e) => {
+        e.preventDefault()
+
+        let new_url = url;
+        if (currState === "Login") {
+            new_url += "/api/user/login";
+        }
+        else {
+            new_url += "/api/user/register"
+        }
+        const response = await axios.post(new_url, data);
+        if (response.data.success) {
+            setToken(response.data.token)
+            localStorage.setItem("token", response.data.token)
+            setShowLogin(false)
+        }
+    }
+
+
   return (
     <div className=' flex justify-center items-center w-full h-full absolute z-10 bg-black bg-opacity-65  '>
-    <form  className=" flex flex-col w-96 gap-2 p-8 border bg-white rounded   ">
+    <form  onSubmit={onLogin}  className=" flex flex-col w-96 gap-2 p-8 border bg-white rounded   ">
         <div className="flex items-center justify-between">
             <h2 className='text-xl font-bold'>{currState}</h2> 
             <RxCross2 onClick={()=>setShowLogin(false)}  />
-            {console.log({setShowLogin})}
+           
             
         </div>
         <div className=" flex flex-col gap-2 ">
             {currState === "Sign Up" 
-            ? <input name='name' onChange={onChangeHandler}  type="text" placeholder='Your name' required className='border p-2 rounded ' /> : <></>}
-            <input name='email' onChange={onChangeHandler} type="email" placeholder='Your email' required className='border p-2 rounded ' />
-            <input name='password' onChange={onChangeHandler}  type="password" placeholder='Password' required className='border p-2 rounded '  />
+            ? <input name='name' onChange={onChangeHandler} value={data.name}  type="text" placeholder='Your name' required className='border p-2 rounded ' /> : <></>}
+            <input name='email' onChange={onChangeHandler} value={data.email} type="email" placeholder='Your email' required className='border p-2 rounded ' />
+            <input name='password' onChange={onChangeHandler}  value={data.password} type="password" placeholder='Password' required className='border p-2 rounded '  />
         </div>
         <button className=' p-2 bg-orange-600 text-white rounded'>{currState === "Login" ? "Login" : "Create account"}</button>
         <div className="flex gap-1 ">

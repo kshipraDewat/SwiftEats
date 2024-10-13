@@ -1,16 +1,18 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom';
 import { assets } from '../assets/assets';
 import { IoMdLogOut } from "react-icons/io";
 import { FaShoppingBasket } from "react-icons/fa";
 import { FaUserCircle } from "react-icons/fa";
 import { LuBox } from "react-icons/lu";
+import  { StoreContext } from '../context/StoreContext'
 
 const Navbar = ({ setShowLogin }) => {
     const [menu, setMenu] = useState("home");
+    const { token ,setToken } = useContext(StoreContext);
     const navigate = useNavigate();
   return (
-    <div className='p-5 md:px-10 lg:px-20 flex justify-between items-center border border-e shadow   '>
+    <div className='p-5 md:px-20 flex justify-between items-center border border-e shadow    '>
        <img src={assets.logo} alt="" className='h-8' />
        <ul className=" hidden lg:flex flex gap-5 items-center ">
        <Link to={"/"}  onClick={() => setMenu("home")} className={`${menu === "home" ? " underline " : ""}`} > Home</Link>
@@ -24,16 +26,17 @@ const Navbar = ({ setShowLogin }) => {
           <FaShoppingBasket className='size-7' />
           <div className='h-2 w-2 bg-orange-500 rounded-full'></div>
         </Link>
-         <button onClick={()=> setShowLogin(true)} className='py-2 px-5 text-white rounded-full bg-orange-500 ' >sign in</button>
-          {/* <div className=' hidden  '>
-            <FaUserCircle className='size-6'/>
-            <ul className=' border p-2 flex flex-col gap-2 rounded  '>
+        {!token ? <button onClick={()=> setShowLogin(true)} className='py-2 px-5 text-white rounded-full bg-orange-500 ' >sign in</button>
+          :<div className='  '>
+            <FaUserCircle className='size-6 relative'/>
+            <ul className=' border p-2 flex flex-col gap-2 rounded absolute z-10 bg-white hidden '>
               <li onClick={()=>navigate('/orders')} className='flex gap-1'> <LuBox className='size-6' /> <p>Orders</p></li>
               <hr />
               <li className='flex gap-1'> <IoMdLogOut className='size-6' /> <p>Logout</p></li> 
             </ul>
           </div>
-         */}
+        }
+        
 
       </div>
         
