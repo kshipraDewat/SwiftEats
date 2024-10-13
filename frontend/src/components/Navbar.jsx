@@ -6,11 +6,11 @@ import { FaShoppingBasket } from "react-icons/fa";
 import { FaUserCircle } from "react-icons/fa";
 import { LuBox } from "react-icons/lu";
 
-const Navbar = () => {
+const Navbar = ({ setShowLogin }) => {
     const [menu, setMenu] = useState("home");
     const navigate = useNavigate();
   return (
-    <div className='p-5 md:px-10 lg:px-20 flex justify-between items-center border border-e shadow'>
+    <div className='p-5 md:px-10 lg:px-20 flex justify-between items-center border border-e shadow   '>
        <img src={assets.logo} alt="" className='h-8' />
        <ul className=" hidden lg:flex flex gap-5 items-center ">
        <Link to={"/"}  onClick={() => setMenu("home")} className={`${menu === "home" ? " underline " : ""}`} > Home</Link>
@@ -19,13 +19,13 @@ const Navbar = () => {
        <a href='#footer' onClick={() => setMenu("contact")} className={`${menu === "contact" ? "underline" : ""}`}>contact us</a>
        </ul>
 
-       <div className="flex items-center gap-5 ">
+       <div className="flex items-center gap-3 ">
         <Link to='/cart' className=' flex'>
-          <FaShoppingBasket className='size-6' />
+          <FaShoppingBasket className='size-7' />
           <div className='h-2 w-2 bg-orange-500 rounded-full'></div>
         </Link>
-         <button className='p-2 text-white rounded bg-orange-500' >sign in</button>
-          <div className=' hidden  '>
+         <button onClick={()=> setShowLogin(true)} className='py-2 px-5 text-white rounded-full bg-orange-500 ' >sign in</button>
+          {/* <div className=' hidden  '>
             <FaUserCircle className='size-6'/>
             <ul className=' border p-2 flex flex-col gap-2 rounded  '>
               <li onClick={()=>navigate('/orders')} className='flex gap-1'> <LuBox className='size-6' /> <p>Orders</p></li>
@@ -33,7 +33,7 @@ const Navbar = () => {
               <li className='flex gap-1'> <IoMdLogOut className='size-6' /> <p>Logout</p></li> 
             </ul>
           </div>
-        
+         */}
 
       </div>
         

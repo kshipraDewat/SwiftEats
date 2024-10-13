@@ -16,6 +16,8 @@ import twitter_icon from './twitter_icon.png'
 import app_store from './app_store.png'
 import play_store from './play_store.png'
 
+import cross_icon from './cross_icon.png'
+
 export const assets = {
     logo,
     logox,
@@ -25,6 +27,7 @@ export const assets = {
     linkedin_icon,
     facebook_icon,
     twitter_icon,
+    cross_icon,
 
 }
 
