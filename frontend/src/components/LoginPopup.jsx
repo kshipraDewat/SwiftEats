@@ -20,7 +20,7 @@ const LoginPopup = ({setShowLogin}) => {
     }
 
     const onLogin = async (e) => {
-        e.preventDefault()
+       e.preventDefault()
 
         let new_url = url;
         if (currState === "Login") {

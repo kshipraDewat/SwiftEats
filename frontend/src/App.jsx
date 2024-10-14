@@ -10,11 +10,10 @@ import { useState } from "react"
 
 
 function App() {
-  const [showLogin,setShowLogin] = useState(true);
+  const [showLogin,setShowLogin] = useState(false);
   return (
     <>
      {showLogin?<LoginPopup setShowLogin={setShowLogin}/>: <></> }
-     {console.log(setShowLogin)}
    <div className="">
       <Navbar  setShowLogin={setShowLogin}/>
        <Routes>
