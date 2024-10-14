@@ -17,6 +17,8 @@ import app_store from './app_store.png'
 import play_store from './play_store.png'
 
 import cross_icon from './cross_icon.png'
+import add_icon_white from './add_icon_white.png'
+import rating_starts from './rating_starts.png'
 
 export const assets = {
     logo,
@@ -28,6 +30,8 @@ export const assets = {
     facebook_icon,
     twitter_icon,
     cross_icon,
+    add_icon_white,
+    rating_starts,
 
 }
 
