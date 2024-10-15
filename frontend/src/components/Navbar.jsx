@@ -9,7 +9,7 @@ import  { StoreContext } from '../context/StoreContext'
 
 const Navbar = ({ setShowLogin }) => {
     const [menu, setMenu] = useState("home");
-    const { token ,setToken } = useContext(StoreContext);
+    const { getTotalCartAmount, token ,setToken } = useContext(StoreContext);
     const navigate = useNavigate();
 
     const logout = () => {
@@ -30,7 +30,7 @@ const Navbar = ({ setShowLogin }) => {
        <div className="flex items-center gap-3 ">
         <Link to='/cart' className=' flex'>
           <FaShoppingBasket className='size-7' />
-          <div className='h-2 w-2 bg-orange-500 rounded-full'></div>
+          <div   className={getTotalCartAmount() > 0 ? "h-2 w-2 bg-orange-500 rounded-full" : ""}></div>
         </Link>
         {!token ? <button onClick={()=> setShowLogin(true)} className='py-2 px-5 text-white rounded-full bg-orange-500 ' >sign in</button>
           :<div className='  '>
