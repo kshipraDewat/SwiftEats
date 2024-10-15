@@ -8,7 +8,7 @@ const Header = () => {
             <div className=' absolute top-0 flex flex-col gap-3 justify-center h-full md:p-20 p-5 '>
                 <h2 className='  font-semibold text-5xl text-white  '>Order your favourite food here</h2>
                 <p className='hidden md:block text-white lg:w-[40vw]'>Choose from a diverse menu featuring a delectable array of dishes crafted with the finest ingredients and culinary expertise. Our mission is to satisfy your cravings and elevate your dining experience, one delicious meal at a time.</p>
-                <button className=' p-2 md:p-3 bg-white rounded-full w-32 text-orange-600'>View Menu</button>
+                <a href="#explore-menu"><button className=' p-2 md:p-3 bg-white rounded-full w-32 text-orange-600'>View Menu</button></a>
             </div>
         </div>
     )
