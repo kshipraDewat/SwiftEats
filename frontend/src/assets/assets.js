@@ -23,6 +23,8 @@ import rating_starts from './rating_starts.png'
 import add_icon_green from './add_icon_green.png'
 import remove_icon_red from './remove_icon_red.png'
 
+import parcel_icon from './parcel_icon.png'
+
 export const assets = {
     logo,
     logox,
@@ -37,6 +39,9 @@ export const assets = {
     rating_starts,
     add_icon_green,
     remove_icon_red,
+    parcel_icon,
+    
+
 
 }
 
