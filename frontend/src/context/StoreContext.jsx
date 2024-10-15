@@ -4,7 +4,7 @@ import axios from 'axios'
 
 const StoreContextProvider = (props) => {
 
-    const url = "http://localhost:4000"
+    const url = import.meta.env.VITE_BACKEND_URL
     const [food_list, setFoodList] = useState([]);
     const [cartItems, setCartItems] = useState({});
     const [token, setToken] = useState("")
