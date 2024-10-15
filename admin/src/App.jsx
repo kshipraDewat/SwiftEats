@@ -1,9 +1,10 @@
+import Navbar from "./component/Navbar"
 
 function App() {
   
   return (
-   <div  className="bg-black text-white p-5">
-    admin panel
+   <div  className=" ">
+    <Navbar/>
    </div>
   )
 }
