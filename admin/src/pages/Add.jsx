@@ -52,10 +52,11 @@ const Add = () => {
     }
 
     return (
-        <div className='p-10 w-[80vw] md:w-[60vw]  lg:w-[35vw] mx-auto lg:mx-10 '>
+        <div className='p-10 px-5 w-[80vw] md:w-[60vw]  lg:w-[35vw] mx-auto lg:mx-10 flex flex-col gap-2 '>
+           <h2 className='text-lg font-bold'>Add Food Item</h2>
             <form className=' flex gap-5 flex-col' onSubmit={onSubmitHandler}>
                 <div className='add-img-upload flex flex-col gap-2 '>
-                    <p className=''>Upload image</p>
+                    {/* <p className=''>Upload image</p> */}
                     <input onChange={(e) => { setImage(e.target.files[0]); e.target.value = '' }} type="file" accept="image/*" id="image" hidden />
                     <label htmlFor="image">
                         {!image ? <div className=' border border-dashed bg-gray-100  border-gray-400 h-32 w-full flex  items-center justify-center text-gray-400 gap-1'> <FaCloudUploadAlt className='size-6' /> <p>Upload Image</p> </div> 
