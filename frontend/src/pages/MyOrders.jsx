@@ -20,7 +20,7 @@ const MyOrders = () => {
   },[token])
 
   return (
-    <div className='m-20  '>
+    <div className='m-10 mx-20 '>
       <h2 className=' font-bold text-xl '>My Orders</h2>
       <div className="flex flex-col gap-5 mt-7 ">
         {data.map((order,index)=>{

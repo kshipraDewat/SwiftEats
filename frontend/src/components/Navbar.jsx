@@ -38,7 +38,7 @@ const Navbar = ({ setShowLogin }) => {
              <FaUserCircle className='size-6 relative' onClick={()=>setOpen(!open)}/>
              {open 
              ?<ul className=' border p-2 mt-1 flex flex-col gap-2 rounded absolute z-10 bg-white  '>
-              <li onClick={()=>navigate('/orders')} className='flex gap-1'> <LuBox className='size-6' /> <p>Orders</p></li>
+              <li onClick={()=>navigate('/myorders')} className='flex gap-1'> <LuBox className='size-6' /> <p>Orders</p></li>
               <hr />
               <li onClick={logout} className='flex gap-1'> <IoMdLogOut className='size-6' /> <p>Logout</p></li> 
             </ul>
