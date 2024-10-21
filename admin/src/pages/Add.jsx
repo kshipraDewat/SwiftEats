@@ -52,7 +52,7 @@ const Add = () => {
     }
 
     return (
-        <div className='p-10 px-5 w-[80vw] md:w-[60vw]  lg:w-[35vw] mx-auto lg:mx-10 flex flex-col gap-2 '>
+        <div className='p-10 px-5  mx-auto lg:mx-10 flex flex-col gap-2 w-[80vw] lg:w-[50vw]'>
            <h2 className='text-lg font-bold'>Add Food Item</h2>
             <form className=' flex gap-5 flex-col' onSubmit={onSubmitHandler}>
                 <div className='add-img-upload flex flex-col gap-2 '>

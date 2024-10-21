@@ -36,7 +36,7 @@ const List = () => {
   }, [])
 
   return (
-    <div className='list add p-10 px-5 flex flex-col gap-2'>
+    <div className='p-10 px-5  mx-auto lg:mx-10 flex flex-col gap-2 w-[80vw] '>
       <p className='text-lg font-bold'>All Foods List</p>
       <div className='list-table flex flex-col gap-1  '>
         <div className="grid grid-cols-5 gap-10 border p-3 px-5">
