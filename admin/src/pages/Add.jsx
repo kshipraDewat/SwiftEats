@@ -56,7 +56,6 @@ const Add = () => {
            <h2 className='text-lg font-bold'>Add Food Item</h2>
             <form className=' flex gap-5 flex-col' onSubmit={onSubmitHandler}>
                 <div className='add-img-upload flex flex-col gap-2 '>
-                    {/* <p className=''>Upload image</p> */}
                     <input onChange={(e) => { setImage(e.target.files[0]); e.target.value = '' }} type="file" accept="image/*" id="image" hidden />
                     <label htmlFor="image">
                         {!image ? <div className=' border border-dashed bg-gray-100  border-gray-400 h-32 w-full flex  items-center justify-center text-gray-400 gap-1'> <FaCloudUploadAlt className='size-6' /> <p>Upload Image</p> </div> 
@@ -90,7 +89,7 @@ const Add = () => {
                         <input type="Number" name='price' onChange={onChangeHandler} value={data.price} placeholder='199' className='border p-2 rounded' />
                     </div>
                 </div>
-                <button type='submit' className='border p-2 bg-black text-white rounded' >ADD</button>
+                <button type='submit' className='border p-2 bg-black text-white rounded ' >ADD</button>
             </form>
         </div>
     )

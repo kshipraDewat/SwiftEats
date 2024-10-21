@@ -19,7 +19,7 @@ const Navbar = ({ setShowLogin }) => {
       navigate('/')
     }
   return (
-    <div className='p-5  md:px-20 flex justify-between items-center border border-e shadow    '>
+    <div className='p-5 px-7  md:px-20 flex justify-between items-center border border-e shadow    '>
        <Link to="/"><img src={assets.logo}  alt="" className=' h-6 md:h-8' /></Link>
        <ul className=" hidden lg:flex flex gap-5 items-center ">
        <Link to={"/"}   onClick={() => setMenu("home")} className={`${menu === "home" ? " underline " : ""}`} > Home</Link>

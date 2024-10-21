@@ -6,6 +6,7 @@ import List from "./pages/List"
 import Orders from "./pages/Orders"
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Home from "./pages/Home"
 
 function App() {
 
@@ -16,6 +17,7 @@ function App() {
       <div className="flex ">
         <Sidebar />
         <Routes>
+          <Route path="/" element={<Home/>} />
           <Route path="/add" element={<Add />} />
           <Route path="/list" element={<List />} />
           <Route path="/orders" element={<Orders />} />
