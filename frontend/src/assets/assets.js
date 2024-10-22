@@ -24,6 +24,8 @@ import add_icon_green from './add_icon_green.png'
 import remove_icon_red from './remove_icon_red.png'
 
 import parcel_icon from './parcel_icon.png'
+import checked from './checked.png'
+import un_checked from './un_checked.png'
 
 export const assets = {
     logo,
@@ -40,6 +42,8 @@ export const assets = {
     add_icon_green,
     remove_icon_red,
     parcel_icon,
+    checked,
+    un_checked
     
 
 
