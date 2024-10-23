@@ -6,11 +6,10 @@ const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 //config variables
 const currency = "inr";
 const deliveryCharge = 50;
-const frontend_URL = process.env.frontend_URL;
+const frontend_URL = process.env.FRONTEND_URL;
 
 // Placing User Order for Frontend using stripe
 const placeOrder = async (req, res) => {
-    console.log(req.body)
     try {
         const newOrder = new orderModel({
             userId: req.body.userId,
@@ -42,9 +41,6 @@ const placeOrder = async (req, res) => {
             },
             quantity: 1
         })
-        console.log('line items', line_items)
-
-        console.log('***************', frontend_URL, "*********************")
 
         const session = await stripe.checkout.sessions.create({
 
@@ -53,7 +49,6 @@ const placeOrder = async (req, res) => {
             line_items: line_items,
             mode: 'payment',
         });
-        console.log("session url ",session)
 
         res.json({ success: true, session_url: session.url });
 
