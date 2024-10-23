@@ -10,7 +10,7 @@ const frontend_URL = process.env.frontend_URL;
 
 // Placing User Order for Frontend using stripe
 const placeOrder = async (req, res) => {
-
+    console.log(req.body)
     try {
         const newOrder = new orderModel({
             userId: req.body.userId,
@@ -42,13 +42,16 @@ const placeOrder = async (req, res) => {
             },
             quantity: 1
         })
+        console.log('line items', line_items)
 
         const session = await stripe.checkout.sessions.create({
+
             success_url: `${frontend_URL}/verify?success=true&orderId=${newOrder._id}`,
             cancel_url: `${frontend_URL}/verify?success=false&orderId=${newOrder._id}`,
             line_items: line_items,
             mode: 'payment',
         });
+        console.log("session url ",session)
 
         res.json({ success: true, session_url: session.url });
 
