@@ -44,6 +44,8 @@ const placeOrder = async (req, res) => {
         })
         console.log('line items', line_items)
 
+        console.log('***************', frontend_URL, "*********************")
+
         const session = await stripe.checkout.sessions.create({
 
             success_url: `${frontend_URL}/verify?success=true&orderId=${newOrder._id}`,
